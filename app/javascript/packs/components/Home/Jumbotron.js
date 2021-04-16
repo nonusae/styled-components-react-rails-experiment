@@ -8,8 +8,11 @@ const Jumbotron = () => {
         <div className="row">
           <div className="col col-sm-12 col-md-5">
             <div className="pt-4 mt-4">
-              <Header>React For Rails2 with styled components</Header>
+              <Header>React For Rails with styled components</Header>
               <SubHeader>Superchrage your react and rails with styled components</SubHeader>
+              <div className="cta-wrapper">
+                <Button>Get started</Button>
+              </div>
             </div>
           </div>
           <div className="col col-sm-12 col-md-7">
@@ -47,6 +50,19 @@ const Header = styled.h1`
 const SubHeader = styled.p`
   font-size: 18px;
   font-weight: 500px;
+`
+
+const Button = styled.a`
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0;
+  background: #fff;
+  color: #333 !important;
+  padding: 10px 20px;
+  font-size: 18px;
+  box-shadow: 0px 0px 0px 3px #473228, -6px 6px #ef5f17, -6px 6px 0px 3px #473228;
 `
 
 export default Jumbotron;

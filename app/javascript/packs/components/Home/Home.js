@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Jumbotron from './Jumbotron'
+import Table from './Table/Table'
 
 const Home = () => {
   const [courseModules, setCourseModules] = useState([
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <div>
       <Jumbotron />
+      <Table courseModules={courseModules}/>
     </div>
   )
 }
