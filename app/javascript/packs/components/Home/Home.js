@@ -10,10 +10,22 @@ const Home = () => {
     { id: 4, title: '4. Add React Router Dom to You App', description: 'Lorem ipsum', active: false },
   ])
 
+  const handleVideoChange = (item) => {
+    const id = item.id
+
+    const newCourseModules = courseModules.map(courseModule => (
+      courseModule.id === id
+      ? {...courseModule, active: true}
+      : {...courseModule, active: false}
+    ))
+
+    setCourseModules(newCourseModules)
+  }
+
   return (
     <div>
       <Jumbotron />
-      <Table courseModules={courseModules}/>
+      <Table courseModules={courseModules} handleVideoChange={handleVideoChange}/>
     </div>
   )
 }
