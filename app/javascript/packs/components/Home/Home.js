@@ -1,14 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Jumbotron from './Jumbotron'
 import Table from './Table/Table'
-
+import axios from 'axios'
 const Home = () => {
-  const [courseModules, setCourseModules] = useState([
-    { id: 1, title: '1. Setting Up a new rails app', description: 'Lorem ipsum', active: false },
-    { id: 2, title: '2. Adding React to an existing rails app', description: 'Lorem ipsum', active: false },
-    { id: 3, title: '3. Building an hello world app', description: 'Lorem ipsum', active: false },
-    { id: 4, title: '4. Add React Router Dom to You App', description: 'Lorem ipsum', active: false },
-  ])
+  const [courseModules, setCourseModules] = useState([])
+
+  useEffect(() => {
+    axios.get('/episodes.json')
+    .then(data => {
+      const coursesData = data.data.data
+      setCourseModules(coursesData.map(data => ({...data, active: false})))
+    })
+  }, [])
 
   const handleVideoChange = (item) => {
     const id = item.id

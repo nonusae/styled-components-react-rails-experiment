@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def episodes
-    @episodes = Course.first.spisodes
+    @episodes = Course.first.episodes
 
     render json: { data: @episodes }
   end
