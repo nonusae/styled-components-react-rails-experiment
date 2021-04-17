@@ -12,10 +12,11 @@ const Home = () => {
 
   const handleVideoChange = (item) => {
     const id = item.id
+    const isActive = item.active
 
     const newCourseModules = courseModules.map(courseModule => (
       courseModule.id === id
-      ? {...courseModule, active: true}
+      ? {...courseModule, active: !isActive}
       : {...courseModule, active: false}
     ))
 

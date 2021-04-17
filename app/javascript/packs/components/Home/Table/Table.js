@@ -5,7 +5,12 @@ import ActiveItem from './ActiveItem'
 const Table = ({courseModules, handleVideoChange}) => {
   const items = courseModules.map(data =>
     data.active ?
-      <ActiveItem key={data.id} title={data.title} description={data.description} />
+      <ActiveItem
+        handleVideoChange={() => handleVideoChange(data)}
+        key={data.id}
+        title={data.title}
+        description={data.description}
+      />
     : <Item
         key={data.id}
         title={data.title}
